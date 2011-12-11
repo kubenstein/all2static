@@ -73,7 +73,7 @@ function all2static_conf() {
 <div class="narrow">
 
 
-<p>All2static plugin will cache all sites depends on their urls. Caching takes place before WordPress machine starts. All2static stores cached sites under:
+<p>All2static plugin will cache all sites depends on their urls. Caching takes place caching takes place before start of WordPress machine. All2static stores cached sites under:
 <i>wp-content/plugins/all2static/cached/*</i> </p>
 <p>Default expriation time is set to 5min.</p>
 <form action="" method="post" id="all2static-conf" style="margin: auto; width: 400px; ">
