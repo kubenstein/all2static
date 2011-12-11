@@ -9,12 +9,29 @@ add_filter( 'plugin_action_links', 'all2static_plugin_action_links', 10, 2 );
 
 
 
+
+
+
+
+
+
+
 function all2static_config_page() {
 	if ( function_exists('add_submenu_page') )
 		add_submenu_page('', __('all2static Configuration'), __('all2static Configuration'), 'manage_options', 'all2static-config', 'all2static_conf');
 }
 
 add_action( 'admin_menu', 'all2static_config_page' );
+
+
+
+
+
+
+
+
+
+
 // init
 function all2static_admin_init() {
     global $wp_version;
@@ -41,6 +58,8 @@ add_action('admin_init', 'all2static_admin_init');
 
 
 
+
+
 function all2static_nonce_field($action = -1) {
 	return wp_nonce_field($action);
 }
@@ -54,7 +73,7 @@ $all2static_nonce = 'all2static-update-key';
 
 
 
-// strona configuracji --------------------|
+
 function all2static_conf() {
 	global $all2static_nonce;
 
@@ -95,4 +114,3 @@ RewriteRule ^index\.php$ - [L]
 </div>
 <?php
 }
-// ----------------------------------------|
