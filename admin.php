@@ -60,10 +60,10 @@ add_action('admin_init', 'all2static_admin_init');
 
 
 
-function update_page( $post_id ) {
-	cleanCache();
+function all2static_update_page( $post_id ) {
+	all2static_cleanCache();
 }
-add_action( 'save_post', 'update_page' );
+add_action( 'save_post', 'all2static_update_page' );
 
 
 
@@ -87,7 +87,7 @@ $all2static_nonce = 'all2static-update-key';
 
 
 
-function cleanCache() {
+function all2static_cleanCache() {
 	array_map( "unlink", glob( '../wp-content/plugins/all2static/cached/*' ) );
 }
 
@@ -106,7 +106,7 @@ function all2static_conf() {
 	if ( isset($_POST['submit']) ) {
 		if ( function_exists('current_user_can') && !current_user_can('manage_options') )
 			exit();
-	cleanCache();
+	all2static_cleanCache();
 	}
 
 ?>
