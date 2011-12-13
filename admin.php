@@ -132,7 +132,7 @@ $dirname = str_replace('wp-admin', '', dirname($_SERVER['SCRIPT_NAME']) );
 <p>You have to add this line to <strong>.htaccess</strong> file. Remember that rules order matters!</p>
 <pre style='font-family: "Courier New"; background-color: #eee; padding:5px 5px;width:605px'>
 ...
-<strong style='color: #0c0'>RewriteRule ^index\.php$ wp-content/plugins/all2static/indexReplacer.php [L]</strong>
+<strong style='color: #0c0'>RewriteRule ^index\.php$ wp-content/plugins/all2static/indexWrapper.php [L]</strong>
 RewriteRule ^index\.php$ - [L]
 ...
 </pre>
@@ -144,7 +144,7 @@ RewriteRule ^index\.php$ - [L]
 RewriteEngine On
 RewriteBase <?= $dirname ?>
 
-RewriteRule ^index\.php$ wp-content/plugins/all2static/indexReplacer.php [L]
+RewriteRule ^index\.php$ wp-content/plugins/all2static/indexWrapper.php [L]
 RewriteRule ^index\.php$ - [L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
@@ -157,7 +157,7 @@ RewriteRule . <?= $dirname ?>index.php [L]
 <p>Since it has been decided not to change .htaccess file automaticly, disabling plugin will not disable its functionality. To disable plugin comment this linie in .htaccess file: </p>
 <pre style='font-family: "Courier New"; background-color: #eee; padding:5px 5px;width:605px'>
 ...
-<strong style='color: #800'>#RewriteRule ^index\.php$ wp-content/plugins/all2static/indexReplacer.php [L]</strong>
+<strong style='color: #800'>#RewriteRule ^index\.php$ wp-content/plugins/all2static/indexWrapper.php [L]</strong>
 RewriteRule ^index\.php$ - [L]
 ...
 </pre>

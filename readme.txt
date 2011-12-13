@@ -21,7 +21,7 @@ System is designed for simple, rather static, sites, based on wordPress only cou
 * Copy plugin to plugins/ directory.
 * Add this line to .htaccess file. Remember that rules order matters!
 	...
--->	RewriteRule ^index\.php$ wp-content/plugins/all2static/indexReplacer.php [L]	<--
+-->	RewriteRule ^index\.php$ wp-content/plugins/all2static/indexWrapper.php [L]	<--
 	RewriteRule ^index\.php$ - [L]
 	...
 
@@ -29,6 +29,6 @@ System is designed for simple, rather static, sites, based on wordPress only cou
 == How to uninstall ==
 Since it has been decided not to change .htaccess file automaticly, disabling plugin will not disable its functionality. To disable plugin comment this linie in .htaccess file:
 ...
--->	#RewriteRule ^index\.php$ wp-content/plugins/all2static/indexReplacer.php [L]	<--
+-->	#RewriteRule ^index\.php$ wp-content/plugins/all2static/indexWrapper.php [L]	<--
 RewriteRule ^index\.php$ - [L]
 ...
