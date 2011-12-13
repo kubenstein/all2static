@@ -152,6 +152,14 @@ RewriteRule . <?= $dirname ?>index.php [L]
 
 # END WordPress</pre>
 
+<h3>How to uninstall</h3>
+<p>Since it has been decided not to change .htaccess file automaticly, disabling plugin will not disable its functionality. To disable plugin comment this linie in .htaccess file: </p>
+<pre style='font-family: "Courier New"; background-color: #eee; padding:5px 5px;width:605px'>
+...
+<strong style='color: #800'>#RewriteRule ^index\.php$ wp-content/plugins/all2static/indexReplacer.php [L]</strong>
+RewriteRule ^index\.php$ - [L]
+...
+</pre>
 </div>
 </div>
 <?php
