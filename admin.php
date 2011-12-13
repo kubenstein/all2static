@@ -109,6 +109,7 @@ function all2static_conf() {
 	all2static_cleanCache();
 	}
 
+$dirname = str_replace('wp-admin', '', dirname($_SERVER['SCRIPT_NAME']) );
 ?>
 <?php if ( !empty($_POST['submit'] ) ) : ?>
 <div id="message" class="updated fade"><p><strong><?php _e('Options saved.') ?></strong></p></div>
@@ -135,6 +136,21 @@ RewriteRule ^index\.php$ - [L]
 ...
 </pre>
 
+<p>If you dont have any .htaccess file, here is example how it should look: </p>
+<pre style='font-family: "Courier New"; background-color: #eee; padding:5px 5px;width:605px'>
+# BEGIN WordPress
+&lt;IfModule mod_rewrite.c&gt;
+RewriteEngine On
+RewriteBase <?= $dirname ?>
+
+RewriteRule ^index\.php$ wp-content/plugins/all2static/indexReplacer.php [L]
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . <?= $dirname ?>index.php [L]
+&lt;/IfModule&gt;
+
+# END WordPress</pre>
 
 </div>
 </div>
