@@ -4,6 +4,7 @@
  */
 /*
 Plugin Name: all2static
+Plugin URI: https://github.com/kubenstein/all2static
 Description: Cache pages as static html depends on url
 Version: 1.0
 Author: Jakub Niewczas
