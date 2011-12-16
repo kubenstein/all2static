@@ -25,6 +25,8 @@ System is designed for simple, rather static, sites, based on wordPress only cou
 	RewriteRule ^index\.php$ - [L]
 	...
 
+* make sure cached/ folder is writable
+
 
 == How to uninstall ==
 Since it has been decided not to change .htaccess file automaticly, disabling plugin will not disable its functionality. To disable plugin comment this linie in .htaccess file:
