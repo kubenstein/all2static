@@ -121,7 +121,7 @@ $dirname = str_replace('wp-admin', '', dirname($_SERVER['SCRIPT_NAME']) );
 
 <p>All2static plugin will cache all sites depends on their urls. Caching takes place caching takes place before start of WordPress machine. All2static stores cached sites under:
 <i>wp-content/plugins/all2static/cached/*</i> </p>
-<p>Default expriation time is set to 5min.</p>
+<p>There is no expriation time. Cache is being cleared every time you insert/update/delete post or page on your site.</p>
 <p>Number of pages currently cached: <?= count(glob( '../wp-content/plugins/all2static/cached/*' )) ?></p>
 <form action="" method="post" id="all2static-conf" style="margin: auto; width: 400px; ">
 <p class="submit"><input type="submit" name="submit" value="<?php _e('Delete cache now'); ?>" /></p>

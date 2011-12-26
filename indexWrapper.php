@@ -5,10 +5,8 @@
 
 $filePath = './cached/'.md5($_SERVER['REQUEST_URI'])."_cache";
 	if( file_exists( $filePath ) ) {
-		if( date('U') - filemtime( $filePath ) < 60 * 5 ) { //5 min
-		echo file_get_contents( $filePath );
-		exit();
-		}
+	echo file_get_contents( $filePath );
+	exit();
 	}
 
 

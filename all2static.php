@@ -1,14 +1,12 @@
 <?php
-/**
- * @package all2static
- */
 /*
 Plugin Name: all2static
 Plugin URI: https://github.com/kubenstein/all2static
 Description: Cache pages as static html depends on url
 Version: 1.0
-Author: Jakub Niewczas
-License: GPLv2 or later
+Author: kubenstein
+Author URI: https://github.com/kubenstein
+Tags: simple, cache, static, htaccess
 */
 define('all2static_VERSION', '1.0');
 define('all2static_PLUGIN_URL', plugin_dir_url( __FILE__ ));
